@@ -1,3 +1,10 @@
+-preveli smo stari statički site u Angular aplikaciju i povezali sa Firebase bazom
+-dodali prijavu i registraciju sa izborom teme i svaki korisnik ima svoj nalog sa sačuvanim podacima
+-stare funkcije (Bingo,Kviz itd.) smo preveli u Angular
+-napravili My Trackers module gdje korisnik unosi podatke i koji se čuvaju u bazi
+-dodali smo statistiku sa grafovima
+
+
 # IpiStranica
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
