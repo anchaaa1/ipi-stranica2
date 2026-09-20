@@ -1,8 +1,10 @@
--preveli smo stari statički site u Angular aplikaciju i povezali sa Firebase bazom
--dodali prijavu i registraciju sa izborom teme i svaki korisnik ima svoj nalog sa sačuvanim podacima
--stare funkcije (Bingo,Kviz itd.) smo preveli u Angular
--napravili My Trackers module gdje korisnik unosi podatke i koji se čuvaju u bazi
--dodali smo statistiku sa grafovima
+## O projektu
+
+- Preveli smo stari statički sajt u Angular aplikaciju i povezali sa Firebase bazom
+- Dodali prijavu i registraciju sa izborom teme, svaki korisnik ima svoj nalog sa sačuvanim podacima
+- Stare funkcije (Bingo, Kviz, itd.) smo preveli u Angular
+- Napravili My Trackers module gdje korisnik unosi podatke koji se čuvaju u bazi
+- Dodali statistiku sa grafovima
 
 
 # IpiStranica
