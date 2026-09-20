@@ -1,0 +1,381 @@
+/* ============================================
+   TEME — paleta boja
+   ============================================ */
+
+:root,
+[data-tema="zelena"] {
+    --boja-pozadina: #f4f6f7;
+    --boja-kartica: #ffffff;
+    --boja-teksta: #2c2c2c;
+    --boja-teksta-prigusena: #6b6b6b;
+
+    --boja-primarna: #1f6f78;
+    --boja-primarna-tamna: #164f56;
+    --boja-primarna-svijetla: #2c8c96;
+    --boja-na-primarnoj: #ffffff;
+
+    --boja-akcent: #a9d4d8;
+    --boja-red-hover: #e6f3f4;
+    --boja-red-parni: #f4f9f9;
+
+    --boja-obrub: #dfe4e4;
+    --boja-obrub-mekana: #e0e6e6;
+
+    --sjena: rgba(0, 0, 0, 0.08);
+    --sjena-mekana: rgba(0, 0, 0, 0.06);
+}
+
+[data-tema="plava"] {
+    --boja-pozadina: #f1f5f9;
+    --boja-kartica: #ffffff;
+    --boja-teksta: #1e293b;
+    --boja-teksta-prigusena: #64748b;
+
+    --boja-primarna: #2563eb;
+    --boja-primarna-tamna: #1e40af;
+    --boja-primarna-svijetla: #3b82f6;
+    --boja-na-primarnoj: #ffffff;
+
+    --boja-akcent: #bfdbfe;
+    --boja-red-hover: #dbeafe;
+    --boja-red-parni: #f8fafc;
+
+    --boja-obrub: #cbd5e1;
+    --boja-obrub-mekana: #e2e8f0;
+
+    --sjena: rgba(30, 58, 138, 0.10);
+    --sjena-mekana: rgba(30, 58, 138, 0.07);
+}
+
+[data-tema="roza"] {
+    --boja-pozadina: #fdf2f8;
+    --boja-kartica: #ffffff;
+    --boja-teksta: #3f3244;
+    --boja-teksta-prigusena: #8b7280;
+
+    --boja-primarna: #db2777;
+    --boja-primarna-tamna: #9d174d;
+    --boja-primarna-svijetla: #ec4899;
+    --boja-na-primarnoj: #ffffff;
+
+    --boja-akcent: #fbcfe8;
+    --boja-red-hover: #fce7f3;
+    --boja-red-parni: #fdf7fa;
+
+    --boja-obrub: #f0d5e2;
+    --boja-obrub-mekana: #f7e4ed;
+
+    --sjena: rgba(157, 23, 77, 0.10);
+    --sjena-mekana: rgba(157, 23, 77, 0.07);
+}
+
+[data-tema="narandzasta"] {
+    --boja-pozadina: #fff7ed;
+    --boja-kartica: #ffffff;
+    --boja-teksta: #3b2a1c;
+    --boja-teksta-prigusena: #8a6b52;
+
+    --boja-primarna: #ea580c;
+    --boja-primarna-tamna: #9a3412;
+    --boja-primarna-svijetla: #f97316;
+    --boja-na-primarnoj: #ffffff;
+
+    --boja-akcent: #fed7aa;
+    --boja-red-hover: #ffedd5;
+    --boja-red-parni: #fffaf5;
+
+    --boja-obrub: #f1dcc8;
+    --boja-obrub-mekana: #f8e9db;
+
+    --sjena: rgba(154, 52, 18, 0.10);
+    --sjena-mekana: rgba(154, 52, 18, 0.07);
+}
+
+[data-tema="dark"] {
+    --boja-pozadina: #0f172a;
+    --boja-kartica: #1e293b;
+    --boja-teksta: #e2e8f0;
+    --boja-teksta-prigusena: #94a3b8;
+
+    --boja-primarna: #38bdf8;
+    --boja-primarna-tamna: #0ea5e9;
+    --boja-primarna-svijetla: #7dd3fc;
+    --boja-na-primarnoj: #0f172a;
+
+    --boja-akcent: #334155;
+    --boja-red-hover: #2c3e55;
+    --boja-red-parni: #243146;
+
+    --boja-obrub: #334155;
+    --boja-obrub-mekana: #2a3b52;
+
+    --sjena: rgba(0, 0, 0, 0.45);
+    --sjena-mekana: rgba(0, 0, 0, 0.35);
+}
+
+[data-tema="cyberpunk"] {
+    --boja-pozadina: #10071f;
+    --boja-kartica: #1d1033;
+    --boja-teksta: #f5e6ff;
+    --boja-teksta-prigusena: #b39ddb;
+
+    --boja-primarna: #f0db4f;
+    --boja-primarna-tamna: #c9b737;
+    --boja-primarna-svijetla: #ff2e97;
+    --boja-na-primarnoj: #10071f;
+
+    --boja-akcent: #ff2e97;
+    --boja-red-hover: #2a1748;
+    --boja-red-parni: #241340;
+
+    --boja-obrub: #3d2363;
+    --boja-obrub-mekana: #2f1a4d;
+
+    --sjena: rgba(255, 46, 151, 0.25);
+    --sjena-mekana: rgba(255, 46, 151, 0.15);
+}
+
+
+/* ============================================
+   OSNOVNI IZGLED
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Verdana, Arial, sans-serif;
+    color: var(--boja-teksta);
+    background-color: var(--boja-pozadina);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--boja-kartica);
+    border-bottom: 3px solid var(--boja-primarna);
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 6px var(--sjena);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header img {
+    max-height: 55px;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 16px;
+    color: var(--boja-primarna);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.aktivno {
+    background-color: var(--boja-primarna);
+    color: var(--boja-na-primarnoj);
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--boja-kartica);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px var(--sjena);
+    min-width: 180px;
+    z-index: 20;
+}
+
+nav ul li:hover > ul,
+nav ul li:focus-within > ul {
+    display: block;
+}
+
+nav ul ul li {
+    width: 100%;
+}
+
+nav ul ul a {
+    display: block;
+    padding: 8px 12px;
+    white-space: nowrap;
+    border-radius: 0;
+}
+
+article {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: var(--boja-kartica);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--sjena-mekana);
+}
+
+article h2 {
+    color: var(--boja-primarna);
+    border-bottom: 2px solid var(--boja-obrub-mekana);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+article h3 {
+    color: var(--boja-primarna-svijetla);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+article a {
+    color: var(--boja-primarna);
+    font-weight: 600;
+}
+
+article a:hover {
+    text-decoration: none;
+    color: var(--boja-primarna-tamna);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+table th,
+table td {
+    border: 1px solid var(--boja-obrub) !important;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--boja-primarna);
+    color: var(--boja-na-primarnoj);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--boja-red-parni);
+}
+
+table tr:hover {
+    background-color: var(--boja-red-hover);
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 1em;
+    color: var(--boja-teksta);
+    background-color: var(--boja-kartica);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--boja-primarna);
+    outline-offset: 1px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 8px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--boja-na-primarnoj);
+    background-color: var(--boja-primarna);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--boja-primarna-tamna);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--boja-teksta-prigusena);
+    font-size: 0.85em;
+    border-top: 1px solid var(--boja-obrub);
+    margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    nav ul ul {
+        position: static;
+        box-shadow: none;
+        border: none;
+        min-width: 0;
+    }
+
+    article {
+        margin: 15px;
+        padding: 20px;
+    }
+}

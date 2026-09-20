@@ -1,0 +1,52 @@
+<article>
+    <div id="sleep-tracker-sadrzaj">
+        <h2>Sleep Tracker</h2>
+
+        <div class="unos-kartica">
+            <label>
+                Datum
+                <input type="date" [(ngModel)]="odabraniDatum" (change)="promjenaDatuma()" [max]="odabraniDatum">
+            </label>
+
+            <label>
+                Vrijeme spavanja
+                <input type="time" [(ngModel)]="vrijemeSpavanja" [disabled]="zakljucano && !editMode">
+            </label>
+
+            <label>
+                Vrijeme buđenja
+                <input type="time" [(ngModel)]="vrijemeBudjenja" [disabled]="zakljucano && !editMode">
+            </label>
+
+            <label>
+                Bilješke
+                <input type="text" [(ngModel)]="biljeske" [disabled]="zakljucano && !editMode" placeholder="npr. loše sam spavao/la">
+            </label>
+
+            @if (vrijemeSpavanja && vrijemeBudjenja) {
+                <p class="sati-sna">Ukupno: {{ izracunajSateSna() }}h sna</p>
+            }
+
+            @if (zakljucano && !editMode) {
+                <button (click)="ukljuciEdit()">Edit</button>
+            } @else {
+                <button (click)="snimi()">Spremi</button>
+            }
+        </div>
+
+        <h3>Poslednjih 14 dana</h3>
+        <div class="graf-sna">
+            @for (dan of dani; track dan.datum) {
+                <div class="stub-dana">
+                    <div class="traka-omotac">
+                        <div class="traka" [style.height.%]="visinaTrake(dan.satiSna)"></div>
+                    </div>
+                    <span class="oznaka-sati">{{ dan.satiSna || '-' }}h</span>
+                    <span class="oznaka-dana">{{ dan.dan }}</span>
+                </div>
+            }
+        </div>
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

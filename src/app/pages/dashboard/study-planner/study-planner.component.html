@@ -1,0 +1,64 @@
+<article>
+    <div id="study-planner-sadrzaj">
+        <h2>Study Planner</h2>
+
+        <label>
+            Odaberi bilo koji dan sedmice
+            <input type="date" [(ngModel)]="odabraniDatum" (change)="promjenaDatuma()">
+        </label>
+        <p class="oznaka-sedmice">Sedmica od: {{ pocetakSedmice }}</p>
+
+        <label>
+            Ciljevi / Prioriteti
+            <textarea [(ngModel)]="ciljevi" [disabled]="zakljucano && !editMode" rows="3"></textarea>
+        </label>
+
+        <h3>Sedmični plan</h3>
+        <div class="tabela-omotac">
+            <table class="tabela-plana">
+                <tr>
+                    @for (dan of dani; track dan) {
+                        <th>{{ dan }}</th>
+                    }
+                </tr>
+                <tr>
+                    @for (dan of dani; track dan) {
+                        <td>
+                            <textarea [(ngModel)]="planPoDanima[dan]" [disabled]="zakljucano && !editMode" rows="4"></textarea>
+                        </td>
+                    }
+                </tr>
+            </table>
+        </div>
+
+        @if (zakljucano && !editMode) {
+            <button (click)="ukljuciEdit()">Edit plan</button>
+        } @else {
+            <button (click)="snimi()">Spremi plan</button>
+        }
+
+        <h3>Lista obaveza</h3>
+        <div class="dodaj-obavezu">
+            <input type="text" [(ngModel)]="novaObaveza" placeholder="Nova obaveza..." (keyup.enter)="dodajObavezu()">
+            <button (click)="dodajObavezu()">Dodaj</button>
+        </div>
+        <ul class="lista-obaveza">
+            @for (stavka of listaObaveza; track $index; let i = $index) {
+                <li [class.gotovo]="stavka.gotovo">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="stavka.gotovo" (change)="prekidacObavezu(stavka)">
+                        {{ stavka.tekst }}
+                    </label>
+                    <button class="dugme-obrisi" (click)="obrisiObavezu(i)">✕</button>
+                </li>
+            }
+        </ul>
+
+        <label>
+            Napomene
+            <textarea [(ngModel)]="napomene" [disabled]="zakljucano && !editMode" rows="3"></textarea>
+        </label>
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

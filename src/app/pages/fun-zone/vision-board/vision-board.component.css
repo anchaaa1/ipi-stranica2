@@ -1,0 +1,126 @@
+article {
+    text-align: center;
+}
+
+#vision-sadrzaj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar {
+    background: var(--boja-kartica);
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px var(--sjena);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#board {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: url('/slike/drvo.jpg');
+    background-size: cover;
+    border-radius: 12px;
+    box-shadow: inset 0 4px 15px var(--sjena);
+    overflow: hidden;
+}
+
+.note, .quote, .pinned-img {
+    position: absolute;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: move;
+    user-select: none;
+    box-shadow: 0 4px 10px var(--sjena);
+    min-width: 100px;
+    min-height: 60px;
+    font-size: 14px;
+}
+
+.note.color1 { background: #d7ecee; }
+.note.color2 { background: #a9d4d8; }
+.note.color3 { background: #c8e6e9; }
+.note.color4 { background: #eef2f3; }
+.note.color5 { background: #8e9eab; }
+.note.color6 { background: #b6d7da; }
+
+.quote {
+    font-family: "Georgia", serif;
+    color: #2c2c2c;
+    background: #ffffff;
+    font-style: italic;
+    text-align: center;
+    width: 200px;
+}
+
+.pinned-img img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    background: none;
+    border: none;
+    color: #b30000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+.pinned-img .delete-btn {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--boja-kartica);
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--sjena);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--boja-primarna);
+}
+
+.modal-content input {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    margin: 0 10px;
+}

@@ -1,0 +1,14 @@
+<article>
+    <h2>Student Fun Zone</h2>
+    <p>Odaberi šta želiš otvoriti.</p>
+
+    <div class="grid-modula">
+        @for (stavka of stavke; track stavka.ruta) {
+            <a [routerLink]="stavka.ruta" class="kartica-modula">
+                <span class="ikona-modula">{{ stavka.ikona }}</span>
+                <h3>{{ stavka.naziv }}</h3>
+                <p>{{ stavka.opis }}</p>
+            </a>
+        }
+    </div>
+</article>

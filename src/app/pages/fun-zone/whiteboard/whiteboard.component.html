@@ -1,0 +1,39 @@
+<article>
+    <h1>Interaktivni Whiteboard</h1>
+
+    <div class="toolbar">
+        <label for="colorPicker">Boja:</label>
+        <input type="color" id="colorPicker" [(ngModel)]="boja">
+
+        <label for="brushSize">Četka:</label>
+        <input type="range" id="brushSize" min="1" max="20" [(ngModel)]="velicinaCetke">
+
+        <button (click)="prekidacBrisac()">{{ brise ? 'Piši' : 'Briši' }}</button>
+        <button (click)="ocistiPlocu()">Čista ploča</button>
+        <button (click)="snimiKaoPNG()">Snimi</button>
+        <button (click)="snimiKaoPDF()">Snimi kao PDF</button>
+        <button (click)="otvoriEmailModal()">Pošalji mailom</button>
+    </div>
+
+    @if (emailModalOtvoren) {
+        <div class="modal" (click)="zatvoriEmailModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <h3>Pošalji mailom</h3>
+                <input type="email" [(ngModel)]="emailUnos" placeholder="unesite@email.com">
+                <div class="modal-buttons">
+                    <button (click)="posaljiEmail()">Pošalji</button>
+                    <button (click)="zatvoriEmailModal()">Poništi</button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <canvas
+        #tabla
+        width="900"
+        height="500"
+        (mousedown)="pocniCrtanje($event)"
+        (mouseup)="zavrsiCrtanje()"
+        (mousemove)="crtaj($event)">
+    </canvas>
+</article>

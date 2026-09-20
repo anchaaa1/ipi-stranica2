@@ -1,0 +1,80 @@
+label {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.mreza-kalendara {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.naslov-dana {
+    text-align: center;
+    font-weight: bold;
+    color: var(--boja-teksta-prigusena);
+    font-size: 0.8em;
+    padding: 6px 0;
+}
+
+.celija-kalendara {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--boja-pozadina);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--boja-teksta);
+}
+
+.celija-kalendara:hover {
+    border-color: var(--boja-primarna-svijetla);
+}
+
+.celija-kalendara.odabrano {
+    background-color: var(--boja-akcent);
+    border-color: var(--boja-primarna);
+}
+
+.celija-prazna {
+    aspect-ratio: 1;
+}
+
+.tacka {
+    position: absolute;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--boja-primarna);
+}
+
+.unos-dogadjaja {
+    max-width: 500px;
+    margin: 20px auto 0;
+    text-align: left;
+}
+
+.unos-dogadjaja h3 {
+    color: var(--boja-primarna);
+    margin-bottom: 8px;
+}
+
+.unos-dogadjaja textarea {
+    width: 100%;
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+    background-color: var(--boja-kartica);
+    color: var(--boja-teksta);
+    resize: vertical;
+    margin-bottom: 10px;
+}

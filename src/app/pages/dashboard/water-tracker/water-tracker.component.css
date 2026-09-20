@@ -1,0 +1,60 @@
+.unos-kartica {
+    background-color: var(--boja-pozadina);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.unos-kartica label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.mreza-dana {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.kartica-dana {
+    background-color: var(--boja-pozadina);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.oznaka-dana {
+    font-size: 0.8em;
+    color: var(--boja-teksta-prigusena);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.red-casa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+}
+
+.casa {
+    font-size: 1.1em;
+    opacity: 0.25;
+    filter: grayscale(100%);
+}
+
+.casa.puna {
+    opacity: 1;
+    filter: none;
+}

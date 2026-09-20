@@ -1,0 +1,49 @@
+<article>
+    <div id="habit-tracker-sadrzaj">
+        <h2>Habit Tracker</h2>
+
+        <label>
+            Mjesec
+            <input type="month" [(ngModel)]="odabraniMjesec" (change)="promjenaMjeseca()">
+        </label>
+
+        <div class="dodaj-naviku">
+            <input type="text" [(ngModel)]="nazivNoveNavike" placeholder="Nova navika..." (keyup.enter)="dodajNaviku()">
+            <button (click)="dodajNaviku()">Dodaj naviku</button>
+        </div>
+
+        @if (navike.length > 0) {
+            <div class="tabela-omotac">
+                <table class="tabela-navika">
+                    <tr>
+                        <th class="kolona-naziva">Navika</th>
+                        @for (dan of dani; track dan) {
+                            <th>{{ dan }}</th>
+                        }
+                        <th></th>
+                    </tr>
+                    @for (navika of navike; track navika.naziv; let i = $index) {
+                        <tr>
+                            <td class="kolona-naziva">{{ navika.naziv }}</td>
+                            @for (dan of dani; track dan; let d = $index) {
+                                <td
+                                    class="celija-dana"
+                                    [class.oznaceno]="navika.oznaceniDani[d]"
+                                    (click)="prekidacDan(navika, d)">
+                                    @if (navika.oznaceniDani[d]) {
+                                        ✔
+                                    }
+                                </td>
+                            }
+                            <td><button class="dugme-obrisi" (click)="obrisiNaviku(i)">✕</button></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        } @else {
+            <p>Još nemaš dodanih navika za ovaj mjesec. Dodaj prvu iznad.</p>
+        }
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

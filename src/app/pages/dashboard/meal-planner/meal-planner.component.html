@@ -1,0 +1,66 @@
+<article>
+    <div id="meal-planner-sadrzaj">
+        <h2>Sedmični planer obroka</h2>
+
+        <label>
+            Odaberi bilo koji dan sedmice
+            <input type="date" [(ngModel)]="odabraniDatum" (change)="promjenaDatuma()">
+        </label>
+        <p class="oznaka-sedmice">Sedmica od: {{ pocetakSedmice }}</p>
+
+        <div class="tabela-omotac">
+            <table class="tabela-obroka">
+                <tr>
+                    <th></th>
+                    @for (dan of dani; track dan) {
+                        <th>{{ dan }}</th>
+                    }
+                </tr>
+                <tr>
+                    <td class="naziv-obroka">Doručak</td>
+                    @for (dan of dani; track dan) {
+                        <td>
+                            <input type="text" [(ngModel)]="obroci[dan].dorucak" [disabled]="zakljucano && !editMode">
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td class="naziv-obroka">Ručak</td>
+                    @for (dan of dani; track dan) {
+                        <td>
+                            <input type="text" [(ngModel)]="obroci[dan].rucak" [disabled]="zakljucano && !editMode">
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td class="naziv-obroka">Večera</td>
+                    @for (dan of dani; track dan) {
+                        <td>
+                            <input type="text" [(ngModel)]="obroci[dan].vecera" [disabled]="zakljucano && !editMode">
+                        </td>
+                    }
+                </tr>
+            </table>
+        </div>
+
+        <div class="donji-red">
+            <label>
+                Grickalice
+                <textarea [(ngModel)]="grickalice" [disabled]="zakljucano && !editMode" rows="4"></textarea>
+            </label>
+
+            <label>
+                Lista namirnica
+                <textarea [(ngModel)]="listaNamirnica" [disabled]="zakljucano && !editMode" rows="4" placeholder="jedna namirnica po liniji"></textarea>
+            </label>
+        </div>
+
+        @if (zakljucano && !editMode) {
+            <button (click)="ukljuciEdit()">Edit</button>
+        } @else {
+            <button (click)="snimi()">Spremi</button>
+        }
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

@@ -1,0 +1,65 @@
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.oznaka-sedmice {
+    color: var(--boja-teksta-prigusena);
+    margin-bottom: 16px;
+}
+
+.tabela-omotac {
+    overflow-x: auto;
+}
+
+.tabela-obroka {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+}
+
+.tabela-obroka th,
+.tabela-obroka td {
+    border: 1px solid var(--boja-obrub);
+    padding: 6px;
+    text-align: center;
+}
+
+.naziv-obroka {
+    font-weight: bold;
+    background-color: var(--boja-pozadina);
+    text-align: left;
+    padding-left: 10px;
+}
+
+.tabela-obroka input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+
+.donji-red {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.donji-red label {
+    flex: 1;
+    min-width: 200px;
+}
+
+textarea {
+    width: 100%;
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+    background-color: var(--boja-kartica);
+    color: var(--boja-teksta);
+    resize: vertical;
+}

@@ -1,0 +1,51 @@
+<article>
+    <div id="calendar-tracker-sadrzaj">
+        <h2>Calendar Tracker</h2>
+
+        <label>
+            Mjesec
+            <input type="month" [(ngModel)]="odabraniMjesec" (change)="promjenaMjeseca()">
+        </label>
+
+        <div class="mreza-kalendara">
+            @for (imeDana of imenaDana; track imeDana) {
+                <div class="naslov-dana">{{ imeDana }}</div>
+            }
+            @for (dan of dani; track $index) {
+                @if (dan) {
+                    <div
+                        class="celija-kalendara"
+                        [class.odabrano]="dan.datum === odabraniDan"
+                        [class.ima-dogadjaj]="dan.imaDogadjaj"
+                        (click)="odaberiDan(dan)">
+                        {{ dan.broj }}
+                        @if (dan.imaDogadjaj) {
+                            <span class="tacka"></span>
+                        }
+                    </div>
+                } @else {
+                    <div class="celija-prazna"></div>
+                }
+            }
+        </div>
+
+        @if (odabraniDan) {
+            <div class="unos-dogadjaja">
+                <h3>{{ odabraniDan }}</h3>
+                <textarea
+                    [(ngModel)]="tekstDogadjaja"
+                    [disabled]="zakljucano && !editMode"
+                    rows="3"
+                    placeholder="Upiši događaj ili podsjetnik..."></textarea>
+
+                @if (zakljucano && !editMode) {
+                    <button (click)="ukljuciEdit()">Edit</button>
+                } @else {
+                    <button (click)="snimi()">Spremi</button>
+                }
+            </div>
+        }
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

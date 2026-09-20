@@ -1,0 +1,41 @@
+.grid-modula {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.kartica-modula {
+    display: block;
+    background-color: var(--boja-pozadina);
+    border: 2px solid var(--boja-obrub);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.1s ease;
+}
+
+.kartica-modula:hover {
+    border-color: var(--boja-primarna-svijetla);
+    transform: translateY(-2px);
+}
+
+.ikona-modula {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.kartica-modula h3 {
+    margin: 8px 0 4px 0;
+    font-size: 1em;
+    color: var(--boja-teksta);
+}
+
+.kartica-modula p {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--boja-teksta-prigusena);
+}

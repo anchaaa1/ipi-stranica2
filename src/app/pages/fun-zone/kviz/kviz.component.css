@@ -1,0 +1,27 @@
+h1 {
+    color: var(--boja-primarna);
+}
+
+.pitanje p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--boja-teksta);
+}
+
+.podnaslov {
+    font-weight: bold;
+    color: var(--boja-teksta);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+    color: var(--boja-teksta);
+}
+
+#result {
+    font-weight: bold;
+    color: var(--boja-primarna);
+    font-size: 1.1em;
+}

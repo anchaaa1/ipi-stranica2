@@ -1,0 +1,92 @@
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.oznaka-sedmice {
+    color: var(--boja-teksta-prigusena);
+    margin-bottom: 16px;
+}
+
+textarea {
+    width: 100%;
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid var(--boja-obrub);
+    border-radius: 6px;
+    background-color: var(--boja-kartica);
+    color: var(--boja-teksta);
+    resize: vertical;
+}
+
+.tabela-omotac {
+    overflow-x: auto;
+}
+
+.tabela-plana {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+}
+
+.tabela-plana th,
+.tabela-plana td {
+    border: 1px solid var(--boja-obrub);
+    padding: 6px;
+    vertical-align: top;
+}
+
+.tabela-plana textarea {
+    min-width: 90px;
+}
+
+.dodaj-obavezu {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.dodaj-obavezu input {
+    flex: 1;
+}
+
+.lista-obaveza {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.lista-obaveza li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid var(--boja-obrub-mekana);
+}
+
+.lista-obaveza li.gotovo label {
+    text-decoration: line-through;
+    color: var(--boja-teksta-prigusena);
+}
+
+.lista-obaveza label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.dugme-obrisi {
+    background: none;
+    color: #b30000;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+.dugme-obrisi:hover {
+    background: none;
+    color: #ff0000;
+}

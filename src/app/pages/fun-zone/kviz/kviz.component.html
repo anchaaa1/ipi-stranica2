@@ -1,0 +1,35 @@
+<article>
+    <h1>KVIZ</h1>
+    <hr>
+    <p class="podnaslov">Testirajte svoje znanje u HTML-u i osnovama weba</p>
+
+    <form>
+        @for (pitanje of pitanja; track pitanje.id) {
+            <div class="pitanje">
+                <p>{{ pitanje.tekst }}</p>
+                @for (opcija of pitanje.opcije; track opcija.vrijednost) {
+                    <label>
+                        @if (pitanje.tip === 'radio') {
+                            <input
+                                type="radio"
+                                [name]="pitanje.id"
+                                [checked]="jeOznaceno(pitanje.id, opcija.vrijednost)"
+                                (click)="oznaciRadio(pitanje.id, opcija.vrijednost)">
+                        } @else {
+                            <input
+                                type="checkbox"
+                                [checked]="jeOznaceno(pitanje.id, opcija.vrijednost)"
+                                (click)="oznaciCheckbox(pitanje.id, opcija.vrijednost)">
+                        }
+                        {{ opcija.tekst }}
+                    </label>
+                }
+            </div>
+        }
+
+        <button type="button" (click)="provjeriOdgovore()">Provjeri odgovore</button>
+        <button type="button" (click)="pokusajPonovo()">Pokušaj ponovo</button>
+    </form>
+
+    <p id="result">{{ rezultat }}</p>
+</article>

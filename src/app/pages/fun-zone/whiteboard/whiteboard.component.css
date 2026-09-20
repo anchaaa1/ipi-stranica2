@@ -1,0 +1,71 @@
+article {
+    text-align: center;
+}
+
+.toolbar {
+    background: var(--boja-kartica);
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--sjena);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.toolbar label {
+    font-size: 14px;
+    color: var(--boja-teksta);
+}
+
+canvas {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--sjena);
+    touch-action: none;
+    max-width: 90vw;
+    max-height: 70vh;
+    cursor: url('/slike/marker.png') 0 30, auto;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--boja-kartica);
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--sjena);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--boja-primarna);
+}
+
+.modal-content input {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    margin: 0 10px;
+}

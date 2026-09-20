@@ -1,0 +1,49 @@
+<article>
+    <div id="water-tracker-sadrzaj">
+        <h2>Water Tracker</h2>
+
+        <div class="unos-kartica">
+            <label>
+                Koliko litara vode ste danas popili?
+                <input
+                    type="number"
+                    step="0.1"
+                    min="0"
+                    [(ngModel)]="litri"
+                    [disabled]="zakljucano && !editMode"
+                    placeholder="npr. 1.5">
+            </label>
+
+            <label>
+                Datum
+                <input
+                    type="date"
+                    [(ngModel)]="odabraniDatum"
+                    (change)="promjenaDatuma()"
+                    [max]="odabraniDatum">
+            </label>
+
+            @if (zakljucano && !editMode) {
+                <button (click)="ukljuciEdit()">Edit</button>
+            } @else {
+                <button (click)="snimi()">Spremi</button>
+            }
+        </div>
+
+        <h3>Poslednjih 30 dana</h3>
+        <div class="mreza-dana">
+            @for (dan of dani; track dan.datum) {
+                <div class="kartica-dana">
+                    <span class="oznaka-dana">Day {{ dan.dan }}</span>
+                    <div class="red-casa">
+                        @for (i of [0, 1, 2, 3, 4, 5, 6, 7]; track i) {
+                            <span class="casa" [class.puna]="i < brojCasaZaDan(dan.litri)">🥤</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>

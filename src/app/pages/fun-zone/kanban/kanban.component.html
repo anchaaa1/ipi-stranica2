@@ -1,0 +1,73 @@
+<article>
+    <div id="kanban-sadrzaj">
+        <h1>Kanban ploča</h1>
+
+        <div class="buttons">
+            <button (click)="otvoriTaskModal()">Dodaj zadatak</button>
+            <button (click)="snimiKaoPNG()">Snimi</button>
+            <button (click)="snimiKaoPDF()">Snimi kao PDF</button>
+            <button (click)="otvoriEmailModal()">Pošalji mailom</button>
+            <button (click)="otvoriClearModal()">Očisti ploču</button>
+        </div>
+
+        <div class="board">
+            @for (kolona of kolone; track kolona.status) {
+                <div
+                    class="column"
+                    (dragover)="dozvoliIspustanje($event)"
+                    (drop)="ispusti(kolona.status)">
+                    <h2>{{ kolona.naslov }}</h2>
+                    <div class="taskList">
+                        @for (zadatak of kolona.zadaci; track $index) {
+                            <div
+                                class="task"
+                                draggable="true"
+                                (dragstart)="pocniPrevlacenje(kolona.status, $index)">
+                                {{ zadatak }}
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @if (taskModalOtvoren) {
+        <div class="modal" (click)="zatvoriTaskModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <h3>Dodaj zadatak</h3>
+                <input type="text" [(ngModel)]="noviZadatak" placeholder="Vaš zadatak...">
+                <div class="modal-buttons">
+                    <button (click)="dodajZadatak()">Dodaj</button>
+                    <button (click)="zatvoriTaskModal()">Poništi</button>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (clearModalOtvoren) {
+        <div class="modal" (click)="otkaziOcisti()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <h3>Očisti cijelu ploču?</h3>
+                <p>Ova se radnja ne može poništiti.</p>
+                <div class="modal-buttons">
+                    <button class="dugme-opasnost" (click)="potvrdiOcisti()">Očisti</button>
+                    <button (click)="otkaziOcisti()">Poništi</button>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (emailModalOtvoren) {
+        <div class="modal" (click)="zatvoriEmailModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <h3>Pošalji mailom</h3>
+                <input type="email" [(ngModel)]="emailUnos" placeholder="unesite@email.com">
+                <div class="modal-buttons">
+                    <button (click)="posaljiEmail()">Pošalji</button>
+                    <button (click)="zatvoriEmailModal()">Poništi</button>
+                </div>
+            </div>
+        </div>
+    }
+</article>

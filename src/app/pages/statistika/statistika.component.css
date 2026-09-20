@@ -1,0 +1,26 @@
+label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.omotac-grafa {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.omotac-pie {
+    max-width: 350px;
+}
+
+.dodaj-ucenje {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.dodaj-ucenje input {
+    max-width: 180px;
+}

@@ -1,0 +1,70 @@
+.unos-kartica {
+    background-color: var(--boja-pozadina);
+    border: 1px solid var(--boja-obrub);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.unos-kartica label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.sati-sna {
+    font-weight: bold;
+    color: var(--boja-primarna);
+    margin: 0;
+}
+
+.graf-sna {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    min-height: 160px;
+}
+
+.stub-dana {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 32px;
+}
+
+.traka-omotac {
+    height: 100px;
+    width: 20px;
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--boja-obrub-mekana);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.traka {
+    width: 100%;
+    background-color: var(--boja-primarna);
+    transition: height 0.2s ease;
+}
+
+.oznaka-sati {
+    font-size: 0.7em;
+    color: var(--boja-teksta);
+}
+
+.oznaka-dana {
+    font-size: 0.65em;
+    color: var(--boja-teksta-prigusena);
+}

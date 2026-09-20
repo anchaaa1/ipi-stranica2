@@ -1,0 +1,65 @@
+.login-register-omotac {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.panel {
+    background-color: var(--boja-akcent);
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel h2 {
+    text-align: center;
+    color: var(--boja-teksta);
+    margin-top: 0;
+}
+
+.panel input[type="email"],
+.panel input[type="password"],
+.panel input[type="text"] {
+    max-width: none;
+}
+
+.panel button {
+    margin-top: 10px;
+}
+
+.oznaka-teme {
+    margin: 8px 0 0 0;
+    font-weight: 600;
+    color: var(--boja-teksta);
+}
+
+.opcije-teme {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.opcije-teme label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.opcije-teme input[type="radio"] {
+    width: auto;
+}
+
+.poruka-status {
+    text-align: center;
+    font-weight: bold;
+    color: var(--boja-primarna);
+    margin-top: 16px;
+}

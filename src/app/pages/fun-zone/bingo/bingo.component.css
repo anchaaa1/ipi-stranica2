@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td {
+    width: 120px;
+    height: 100px;
+    border: 1px solid var(--boja-obrub);
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+    font-size: 14px;
+    background-color: var(--boja-kartica);
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: var(--boja-akcent);
+}
+
+td.selected {
+    background-color: var(--boja-akcent);
+}
+
+td.free {
+    background-color: var(--boja-primarna);
+    color: var(--boja-na-primarnoj);
+    font-weight: bold;
+    cursor: default;
+}

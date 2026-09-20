@@ -1,0 +1,31 @@
+<article>
+    <h2>Statistika</h2>
+
+    <label>
+        Prikaz za posljednjih
+        <select [(ngModel)]="opseg" (change)="promjenaOpsega()">
+            <option value="7">7 dana (sedmica)</option>
+            <option value="30">30 dana (mjesec)</option>
+        </select>
+    </label>
+
+    <h3>Sati spavanja</h3>
+    <div class="omotac-grafa">
+        <canvas #sanCanvas></canvas>
+    </div>
+
+    <h3>Vrijeme učenja</h3>
+    <div class="dodaj-ucenje">
+        <input type="date" [(ngModel)]="datumUcenja" [max]="datumUcenja">
+        <input type="number" min="0" [(ngModel)]="minutaUcenja" placeholder="minuta učenja">
+        <button (click)="dodajUcenje()">Dodaj unos</button>
+    </div>
+    <div class="omotac-grafa">
+        <canvas #ucenjeCanvas></canvas>
+    </div>
+
+    <h3>Pregled aktivnosti po trackerima</h3>
+    <div class="omotac-grafa omotac-pie">
+        <canvas #pieCanvas></canvas>
+    </div>
+</article>

@@ -1,0 +1,25 @@
+<header>
+    <a routerLink="/">
+        <img src="slike/logo-ipi.png" alt="Kursevi IPI">
+    </a>
+    <nav>
+        @if (prijavljenKorisnik$ | async; as korisnik) {
+            <ul>
+                <li><a routerLink="/view-profile" routerLinkActive="aktivno">View Profile</a></li>
+                <li><a routerLink="/fun-zone" routerLinkActive="aktivno">Student Fun Zone</a></li>
+                <li><a routerLink="/dashboard" routerLinkActive="aktivno">My Trackers</a></li>
+                <li><a routerLink="/statistika" routerLinkActive="aktivno">Statistika</a></li>
+                <li><a (click)="odjaviSe()">Odjava</a></li>
+            </ul>
+        } @else {
+            <ul>
+                <li><a routerLink="/" routerLinkActive="aktivno" [routerLinkActiveOptions]="{exact: true}">O kursevima</a></li>
+                <li><a routerLink="/popis" routerLinkActive="aktivno">Popis kurseva</a></li>
+                <li><a routerLink="/raspored" routerLinkActive="aktivno">Raspored kurseva</a></li>
+                <li><a routerLink="/fun-zone" routerLinkActive="aktivno">Student Fun Zone</a></li>
+                <li><a routerLink="/kontakt" routerLinkActive="aktivno">Kontakt</a></li>
+                <li><a routerLink="/login" routerLinkActive="aktivno">Login/Register</a></li>
+            </ul>
+        }
+    </nav>
+</header>

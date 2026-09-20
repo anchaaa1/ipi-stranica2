@@ -1,0 +1,58 @@
+<article>
+    <div id="vision-sadrzaj">
+        <h1>Student Fun Zone - Vision board</h1>
+
+        <div class="toolbar">
+            <button (click)="dodajPostIt()">+ Post it</button>
+            <button (click)="dodajSliku()">+ Slika</button>
+            <button (click)="dodajCitat()">+ Citat</button>
+            <button (click)="snimiPlocu()">Snimi</button>
+            <button (click)="snimiKaoPDF()">Snimi kao PDF</button>
+            <button (click)="otvoriEmailModal()">Pošalji mailom</button>
+            <button (click)="ocistiPlocu()">Očisti ploču</button>
+        </div>
+
+        <div id="board">
+            @for (stavka of stavke; track stavka.id) {
+                @if (stavka.tip === 'image') {
+                    <div
+                        class="pinned-img"
+                        [style.left.px]="stavka.left"
+                        [style.top.px]="stavka.top"
+                        (mousedown)="pocniPrevlacenje($event, stavka)">
+                        <button class="delete-btn" (mousedown)="$event.stopPropagation()" (click)="obrisiStavku($event, stavka)">📌</button>
+                        <img [src]="stavka.slika">
+                    </div>
+                } @else {
+                    <div
+                        [ngClass]="stavka.tip === 'note' ? ['note', stavka.klasaBoje!] : ['quote']"
+                        [style.left.px]="stavka.left"
+                        [style.top.px]="stavka.top"
+                        contenteditable="true"
+                        [innerText]="stavka.tekst"
+                        (input)="azurirajTekst($event, stavka)"
+                        (mousedown)="pocniPrevlacenje($event, stavka)">
+                    </div>
+                    <button
+                        class="delete-btn"
+                        [style.left.px]="stavka.left + 130"
+                        [style.top.px]="stavka.top + 2"
+                        (click)="obrisiStavku($event, stavka)">📌</button>
+                }
+            }
+        </div>
+    </div>
+
+    @if (emailModalOtvoren) {
+        <div class="modal" (click)="zatvoriEmailModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <h3>Pošalji mailom</h3>
+                <input type="email" [(ngModel)]="emailUnos" placeholder="unesite@email.com">
+                <div class="modal-buttons">
+                    <button (click)="posaljiEmail()">Pošalji</button>
+                    <button (click)="zatvoriEmailModal()">Poništi</button>
+                </div>
+            </div>
+        </div>
+    }
+</article>

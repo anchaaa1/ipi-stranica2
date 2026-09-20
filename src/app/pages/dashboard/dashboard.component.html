@@ -1,0 +1,13 @@
+<article>
+    <h2>My Trackers</h2>
+    <p>Odaberi tracker koji želiš otvoriti.</p>
+
+    <div class="grid-trackera">
+        @for (tracker of trackeri; track tracker.id) {
+            <a [routerLink]="tracker.ruta" class="kartica-trackera">
+                <span class="ikona-trackera">{{ tracker.ikona }}</span>
+                <h3>{{ tracker.naziv }}</h3>
+            </a>
+        }
+    </div>
+</article>

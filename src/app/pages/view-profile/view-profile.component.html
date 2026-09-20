@@ -1,0 +1,14 @@
+<article>
+    @if (ucitavanje) {
+        <p>Učitavanje...</p>
+    } @else {
+        <h2>Welcome {{ ime || email }}</h2>
+        <p>
+            Ovo je tvoj profil na Kursevi IPI platformi. Ovdje možeš pregledati osnovne
+            informacije o svom nalogu, pratiti svoje module i pristupiti Student Fun Zone
+            sadržaju i svojim tracker-ima putem menija iznad.
+        </p>
+        <p><strong>Ime:</strong> {{ ime }}</p>
+        <p><strong>E-mail:</strong> {{ email }}</p>
+    }
+</article>

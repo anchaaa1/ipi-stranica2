@@ -1,0 +1,29 @@
+<article class="login-register-omotac">
+    <div class="panel panel-login">
+        <h2>LOGIN</h2>
+        <input type="email" [(ngModel)]="email" name="loginEmail" placeholder="Unesite email">
+        <input type="password" [(ngModel)]="password" name="loginPassword" placeholder="Unesite password">
+        <button (click)="prijaviSe()">Login</button>
+    </div>
+
+    <div class="panel panel-register">
+        <h2>REGISTER</h2>
+        <input type="text" [(ngModel)]="ime" name="registerIme" placeholder="Unesite ime">
+        <input type="email" [(ngModel)]="email" name="registerEmail" placeholder="Unesite email">
+        <input type="password" [(ngModel)]="password" name="registerPassword" placeholder="Unesite password">
+
+        <p class="oznaka-teme">Izbor teme:</p>
+        <div class="opcije-teme">
+            <label><input type="radio" name="tema" value="zelena" [(ngModel)]="tema" (change)="onPromjenaTeme()"> zelena</label>
+            <label><input type="radio" name="tema" value="plava" [(ngModel)]="tema" (change)="onPromjenaTeme()"> plava</label>
+            <label><input type="radio" name="tema" value="roza" [(ngModel)]="tema" (change)="onPromjenaTeme()"> roza</label>
+            <label><input type="radio" name="tema" value="narandzasta" [(ngModel)]="tema" (change)="onPromjenaTeme()"> narandžasta</label>
+            <label><input type="radio" name="tema" value="dark" [(ngModel)]="tema" (change)="onPromjenaTeme()"> tamna/dark</label>
+            <label><input type="radio" name="tema" value="cyberpunk" [(ngModel)]="tema" (change)="onPromjenaTeme()"> cyberpunk</label>
+        </div>
+
+        <button (click)="registruj()">Register</button>
+    </div>
+</article>
+
+<p class="poruka-status">{{ poruka }}</p>

@@ -1,0 +1,22 @@
+<article>
+    <h2>Bingo challenge</h2>
+    <p>Pronađi nekoga ko voli navedene stvari iz tablice.
+        Skupi 5 potpisa zaredom - BINGO. Svaka osoba može staviti inicijale na vaš papir samo dva puta</p>
+
+    <table id="bingo-tabela">
+        @for (red of redovi; track $index) {
+            <tr>
+                @for (celija of red; track $index) {
+                    <td
+                        [class.selected]="celija.izabrana"
+                        [class.free]="celija.slobodna"
+                        (click)="prekidacCelija(celija)">
+                        {{ celija.tekst }}
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+
+    <button (click)="preuzmiKaoPDF()">Preuzmi kao PDF</button>
+</article>
